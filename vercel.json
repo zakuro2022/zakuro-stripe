@@ -1,13 +1,8 @@
 {
-  "version": 2,
-  "functions": {
-    "create-checkout.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "routes": [
-    { "src": "/api/create-checkout", "dest": "/create-checkout.js" },
-    { "src": "/(.*)", "dest": "/Index.html" }
+  "rewrites": [
+    { "source": "/api/create-checkout", "destination": "/create-checkout.js" },
+    { "source": "/", "destination": "/index.html" }
   ]
 }
+
 
