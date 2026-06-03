@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/*.js", "use": "@vercel/node" }
-  ],
+  "functions": {
+    "create-checkout.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" }
+    { "src": "/api/create-checkout", "dest": "/create-checkout.js" },
+    { "src": "/", "dest": "/Index.html" }
   ]
 }
