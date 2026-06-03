@@ -1,7 +1,24 @@
 {
-  "rewrites": [
-    { "source": "/api/create-checkout", "destination": "/api/create-checkout.js" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/create-checkout.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/create-checkout",
+      "dest": "/api/create-checkout.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
 
